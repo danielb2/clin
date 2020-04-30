@@ -17,7 +17,10 @@ const main = function () {
 	const final = reqs.map((i) => {
 		
 		const name = CamelCase(i.replace(/[@/]/g, '-'));
-		return `${name} = require("${i}")`;
+		if (i !== name) {
+			console.log(`'${i}' as ${name}`);
+		}
+		return `try { global.${name} = require("${i}") } catch (e) { console.log("Failed to load '${i}'") }`;
 	}).join(';');
 
 	const res = CP.spawnSync('node', ['-i', '-e', final], { stdio: 'inherit' });
