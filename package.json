@@ -1,7 +1,7 @@
 {
   "name": "clin",
   "version": "1.0.0",
-  "description": "boosts node cli by requiring all dependencies in package.json",
+  "description": "Start node REPL with all your dependencies loaded",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

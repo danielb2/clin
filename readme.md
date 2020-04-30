@@ -1,4 +1,4 @@
-# Clin - CLI loader
+# Clin - Start node REPL with all your dependencies loaded
 
 What ends up happening is I open the CLI a lot but then I have to require the stuff I want to use ... EVERY TIME
 This allows me to skip that step
