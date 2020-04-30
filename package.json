@@ -1,0 +1,22 @@
+{
+  "name": "clin",
+  "version": "1.0.0",
+  "description": "boosts node cli by requiring all dependencies in package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "clin": "index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/glue": "^7.0.0",
+    "camelcase": "^6.0.0",
+    "joi": "^14.3.1"
+  },
+  "devDependencies": {
+    "purdy": "^3.5.1"
+  }
+}
