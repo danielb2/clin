@@ -9,6 +9,10 @@
   "bin": {
     "clin": "index.js"
   },
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/danielb2/clin"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
