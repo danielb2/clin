@@ -36,8 +36,11 @@ const main = function () {
         Load = require(`${process.cwd()}/package.json`);
     } catch (e) {
         console.log(
-            'A package.json must be in the same folder to load dependencies'
+            Chalk.red(
+                ' A package.json must be in the same folder to load dependencies'
+            )
         );
+        process.exit();
     }
 
     const reqs = [];
