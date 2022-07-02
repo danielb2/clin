@@ -1,6 +1,6 @@
 {
     "name": "clin",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "description": "Start node REPL with all your dependencies loaded",
     "main": "index.js",
     "scripts": {
