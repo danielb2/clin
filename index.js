@@ -11,7 +11,7 @@ const requires = function (obj) {
 };
 
 const clicmd = function (name, lib) {
-    return `try { global.${name} = require("${lib}") } catch (e) { console.log("Failed to load '${lib}' as ${name}") };\n`;
+    return `try { global.${name} = require("${lib}") } catch (e) { console.log("Failed to load '${lib}' as ${name}") }`;
 };
 
 const name_for = function (lib) {
@@ -21,7 +21,7 @@ const name_for = function (lib) {
 const display = function (lib, name, longestString) {
     console.log(
         '',
-        Chalk.blue(lib.padEnd(longestString + 4)),
+        Chalk.cyan(lib.padEnd(longestString + 4)),
         'as ',
         Chalk.green(name)
     );
@@ -29,6 +29,7 @@ const display = function (lib, name, longestString) {
 
 const main = function () {
     console.log(Chalk.bold.underline.yellow(`CLIn v${Pkg.version}`));
+    console.log(' loading libraries ...');
     let Load = '';
 
     try {
@@ -43,7 +44,7 @@ const main = function () {
     reqs.push(...requires(Load.dependencies));
     reqs.push(...requires(Load.devDependencies));
 
-    let longestString = reqs.reduce((p, c) =>
+    let longestString = [...reqs, Load.main].reduce((p, c) =>
         name_for(p).length > name_for(c).length ? name_for(p) : name_for(c)
     ).length;
 
@@ -54,8 +55,9 @@ const main = function () {
                 display(lib, name, longestString);
                 return clicmd(name, lib);
             })
-            .join(';') + clicmd('main', './' + Load.main);
+            .join(';\n') + clicmd('main', './' + Load.main);
 
+    display(Load.main, 'main', longestString);
     console.log('');
     const res = CP.spawnSync('node', ['-i', '-e', final], { stdio: 'inherit' });
 };
