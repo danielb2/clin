@@ -7,6 +7,8 @@ It's the same as running `node` in your local directory, and having ALL the file
 
 Because some package names are not suitable for variable names, they get renamed. For example: '@org/foo-bar' is accessible as 'orgFooBar'
 
+The package.json "main" file will always be loaded as `main`
+
 ![example](media/example.png)
 
 ## installation
