@@ -2,12 +2,12 @@
     "name": "clin",
     "version": "2.0.0",
     "description": "Start node REPL with all your dependencies loaded",
-    "main": "index.js",
+    "main": "lib/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "bin": {
-        "clin": "index.js"
+        "clin": "bin/clin.js"
     },
     "repository": {
         "type": "git",
@@ -17,6 +17,7 @@
     "license": "ISC",
     "dependencies": {
         "camelcase": "^6.0.0",
-        "chalk": "4.x.x"
+        "chalk": "4.x.x",
+        "find-up": "5.x.x"
     }
 }

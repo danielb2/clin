@@ -7,4 +7,12 @@ It's the same as running `node` in your local directory, and having ALL the file
 
 Because some package names are not suitable for variable names, they get renamed. For example: '@org/foo-bar' is accessible as 'orgFooBar'
 
-!(blah)[./media/example.png]
+![example](media/example.png)
+
+## installation
+
+`npm install -g clin`
+
+or
+
+`yarn global add clin`
