@@ -11,6 +11,8 @@ The package.json "main" file will always be loaded as `main`
 
 ![example](media/example.png)
 
+To redisplay the list of required libs, type `clin.show` on the CLI
+
 ## installation
 
 `npm install -g clin`
